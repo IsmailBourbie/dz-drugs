@@ -11,4 +11,8 @@ class Dosage extends Model
 
     protected $guarded = [];
     public $timestamps = false;
+
+    public function drug() {
+        return $this->hasMany(Drug::class);
+    }
 }
