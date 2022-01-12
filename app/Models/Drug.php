@@ -40,4 +40,30 @@ class Drug extends Model
     {
         return $this->belongsTo(Laboratory::class);
     }
+
+    public function scopeFilter($query, array $filters = []) {
+        $query->when(
+            $filters['dci'] ?? false,
+            fn ($query, $dci) => $query->whereHas(
+                'dci',
+                fn ($query) => $query->where('slug', $dci)
+            )
+        );
+
+        $query->when(
+            $filters['dosage'] ?? false,
+            fn ($query, $dosage) => $query->whereHas(
+                'dosage',
+                fn ($query) => $query->where('slug', $dosage)
+            )
+        );
+
+        $query->when(
+            $filters['form'] ?? false,
+            fn ($query, $form) => $query->whereHas(
+                'form',
+                fn ($query) => $query->where('slug', $form)
+            )
+        );
+    }
 }
