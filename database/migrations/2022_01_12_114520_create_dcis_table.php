@@ -17,7 +17,7 @@ class CreateDcisTable extends Migration
         Schema::create('dcis', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('slug');
+            $table->string('slug')->unique();
             $table->float('tarif')->default(Null);
             $table->text('observation')->nullable();
         });

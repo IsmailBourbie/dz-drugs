@@ -11,4 +11,8 @@ class DrugController extends Controller
     public function index() {
         return response()->json(Drug::all());
     }
+
+    public function show(Drug $drug) {
+        return response()->json($drug);
+    }
 }

@@ -27,27 +27,27 @@ class DatabaseSeeder extends Seeder
 
         $dci[] = Dci::factory()->create([
             'name' => 'Paracetamol',
-            'slug' => Str::slug('Paracetamol')
+            'slug' => Str::slug('Paracetamol') . '-'  . rand(1000, 9999)
         ]);
 
         $dci[] = Dci::factory()->create([
             'name' => 'Diclofenac',
-            'slug' => Str::slug('Diclofenac')
+            'slug' => Str::slug('Diclofenac') . '-'  . rand(1000, 9999)
         ]);
 
         $dci[] = Dci::factory()->create([
             'name' => 'Omeprazole',
-            'slug' => Str::slug('Omeprazole')
+            'slug' => Str::slug('Omeprazole') . '-'  . rand(1000, 9999)
         ]);
 
         $dci[] = Dci::factory()->create([
             'name' => 'Lansoprazole',
-            'slug' => Str::slug('Lansoprazole')
+            'slug' => Str::slug('Lansoprazole') . '-'  . rand(1000, 9999)
         ]);
 
         $dci[] = Dci::factory()->create([
             'name' => 'Metronidazol',
-            'slug' => Str::slug('Metronidazol')
+            'slug' => Str::slug('Metronidazol') . '-'  . rand(1000, 9999)
         ]);
 
 
@@ -105,7 +105,7 @@ class DatabaseSeeder extends Seeder
 
         Drug::factory()->create([
             'name' => 'Paralgan',
-            'slug' => Str::slug('Paralgan'),
+            'slug' => Str::slug('Paralgan') . '-' . rand(1000, 9999),
             'dci_id' => 1,
             'laboratory_id' => 1,
             'dosage_id' => 2,
@@ -114,7 +114,7 @@ class DatabaseSeeder extends Seeder
 
         Drug::factory()->create([
             'name' => 'Doliprane',
-            'slug' => Str::slug('Doliprane'),
+            'slug' => Str::slug('Doliprane') . '-' . rand(1000, 9999),
             'dci_id' => 1,
             'laboratory_id' => 2,
             'dosage_id' => 1,
@@ -123,7 +123,7 @@ class DatabaseSeeder extends Seeder
 
         Drug::factory()->create([
             'name' => 'Doliprane',
-            'slug' => Str::slug('Doliprane'),
+            'slug' => Str::slug('Doliprane') . '-' . rand(1000, 9999),
             'dci_id' => 1,
             'laboratory_id' => 2,
             'dosage_id' => 4,
@@ -132,7 +132,7 @@ class DatabaseSeeder extends Seeder
 
         Drug::factory()->create([
             'name' => 'Doliprane',
-            'slug' => Str::slug('Doliprane'),
+            'slug' => Str::slug('Doliprane') . '-' . rand(1000, 9999),
             'dci_id' => 1,
             'laboratory_id' => 2,
             'dosage_id' => 9,
@@ -141,7 +141,7 @@ class DatabaseSeeder extends Seeder
 
         Drug::factory()->create([
             'name' => 'Clofenal',
-            'slug' => Str::slug('Clofenal'),
+            'slug' => Str::slug('Clofenal') . '-' . rand(1000, 9999),
             'dci_id' => 2,
             'laboratory_id' => 1,
             'dosage_id' => 6,
@@ -149,7 +149,7 @@ class DatabaseSeeder extends Seeder
         ]);
         Drug::factory()->create([
             'name' => 'Flagyl',
-            'slug' => Str::slug('Flagyl'),
+            'slug' => Str::slug('Flagyl') . '-' . rand(1000, 9999),
             'dci_id' => 5,
             'laboratory_id' => 3,
             'dosage_id' => 3,
@@ -157,7 +157,7 @@ class DatabaseSeeder extends Seeder
         ]);
         Drug::factory()->create([
             'name' => 'Flagyl',
-            'slug' => Str::slug('Flagyl'),
+            'slug' => Str::slug('Flagyl') . '-' . rand(1000, 9999),
             'dci_id' => 5,
             'laboratory_id' => 3,
             'dosage_id' => 2,
@@ -165,7 +165,7 @@ class DatabaseSeeder extends Seeder
         ]);
         Drug::factory()->create([
             'name' => 'Proton',
-            'slug' => Str::slug('Proton'),
+            'slug' => Str::slug('Proton') . '-' . rand(1000, 9999),
             'dci_id' => 3,
             'laboratory_id' => 1,
             'dosage_id' => 7,
@@ -173,7 +173,7 @@ class DatabaseSeeder extends Seeder
         ]);
         Drug::factory()->create([
             'name' => 'Zopra',
-            'slug' => Str::slug('Zopra'),
+            'slug' => Str::slug('Zopra') . '-' . rand(1000, 9999),
             'dci_id' => 4,
             'laboratory_id' => 1,
             'dosage_id' => 8,

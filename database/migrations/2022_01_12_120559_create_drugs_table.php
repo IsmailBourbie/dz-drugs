@@ -16,7 +16,7 @@ class CreateDrugsTable extends Migration
         Schema::create('drugs', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('slug');
+            $table->string('slug')->unique();
             $table->integer('quantity');     
             $table->unsignedBigInteger('dci_id');
             $table->unsignedBigInteger('laboratory_id');
