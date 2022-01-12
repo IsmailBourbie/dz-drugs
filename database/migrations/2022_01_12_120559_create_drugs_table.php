@@ -15,13 +15,13 @@ class CreateDrugsTable extends Migration
     {
         Schema::create('drugs', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
+            $table->string('slug');
+            $table->integer('quantity');     
             $table->unsignedBigInteger('dci_id');
             $table->unsignedBigInteger('laboratory_id');
             $table->unsignedBigInteger('form_id');
             $table->unsignedBigInteger('dosage_id');
-            $table->string('name');
-            $table->string('slug');
-            $table->integer('quantity');     
             
             $table->foreign('dci_id')->references('id')->on('dcis');
             $table->foreign('laboratory_id')->references('id')->on('laboratories');
