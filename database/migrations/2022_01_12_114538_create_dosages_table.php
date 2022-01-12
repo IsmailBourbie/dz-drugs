@@ -15,7 +15,9 @@ class CreateDosagesTable extends Migration
     {
         Schema::create('dosages', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
+            $table->string('suffix')->unique();
+            $table->string('name');
+            $table->string('alternative')->nullable();
         });
     }
 
