@@ -29,4 +29,7 @@ Route::namespace('App\Http\Controllers\Api')->group(function() {
 
     Route::get('laboratoires/', 'LaboratoryController@index');
     Route::get('laboratoires/{laboratory:slug}', 'LaboratoryController@show');
+
+
+    Route::get('/search', 'SearchController@index');
 });
