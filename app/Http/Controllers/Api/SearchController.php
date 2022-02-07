@@ -12,12 +12,13 @@ class SearchController extends Controller
     public function index(Request $request)
     {
         $q = $request->input('q');
+        $limit = $request->input('limit') ?? '*';
 
         // Search in drug name
-        $drugs = Drug::query()->where('name', 'LIKE', "%{$q}%")->limit(5)->get();
+        $drugs = Drug::query()->where('name', 'LIKE', "%{$q}%")->limit($limit)->get();
 
         // Search in Dci name
-        $dci = Dci::query()->where('name', 'LIKE', "%{$q}%")->limit(5)->get();
+        $dci = Dci::query()->where('name', 'LIKE', "%{$q}%")->limit($limit)->get();
         
 
         return response()->json([
