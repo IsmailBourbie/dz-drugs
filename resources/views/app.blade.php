@@ -12,7 +12,7 @@
     </head>
     <body class="antialiased">
         <div id="app" class="flex items-center justify-center bg-gray-100 min-h-screen">
-            <example-component></example-component>
+            <router-view></router-view>
         </div>
 
         <script src="/js/app.js"></script>
