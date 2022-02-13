@@ -1,17 +1,17 @@
 <template>
-  <ExampleComponent />
+	<NavbarComponent />
 </template>
 
 <script>
-import ExampleComponent from '../components/ExampleComponent.vue'
+import NavbarComponent from "../components/NavbarComponent.vue";
 export default {
-  components: {
-    ExampleComponent
-  },
-  computed: {
-    categories () {
-      return this.$store.state.categories
-    }
-  }
-}
+	components: {
+		NavbarComponent,
+	},
+	computed: {
+		categories() {
+			return this.$store.state.categories;
+		},
+	},
+};
 </script>

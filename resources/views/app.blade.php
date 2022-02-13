@@ -11,7 +11,7 @@
         <link rel="stylesheet" href="/css/app.css">
     </head>
     <body class="antialiased">
-        <div id="app" class="flex items-center justify-center bg-gray-100 min-h-screen">
+        <div id="app">
             <router-view></router-view>
         </div>
 
