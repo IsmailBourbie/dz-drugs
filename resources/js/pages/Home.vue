@@ -1,7 +1,17 @@
 <template>
-    <div class="container bg-slate-50 mx-auto h-screen">
+    <div
+        class="
+            container
+            mx-auto
+            h-screen
+            bg-medical-pattern bg-bottom bg-no-repeat
+        "
+    >
         <div class="flex items-center justify-center h-full">
-            <div class="lg:w-7/12 w-11/12">
+            <div class="lg:w-7/12 w-11/12 relative">
+                <div class="absolute -top-20 -left-20 z-back">
+                    <img src="/images/shapes/1.svg" alt="" />
+                </div>
                 <div class="relative mt-1">
                     <div
                         class="
@@ -53,7 +63,6 @@
                         type="text"
                         id="email-adress-icon"
                         class="
-                            bg-gray-50
                             border border-gray-300
                             text-gray-900 text-sm
                             rounded-lg
@@ -82,7 +91,11 @@
 
                 <div class="text-center mt-8">
                     <a href="https://play.google.com/store/apps">
-                        <img src="/images/logos/play-badge.svg" alt="Google Play" class="mx-auto">
+                        <img
+                            src="/images/logos/play-badge.svg"
+                            alt="Google Play"
+                            class="mx-auto"
+                        />
                     </a>
                 </div>
             </div>

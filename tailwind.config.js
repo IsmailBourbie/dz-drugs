@@ -12,6 +12,12 @@ module.exports = {
         },
       },
     },
+    backgroundImage: {
+      'medical-pattern': "url('/images/shapes/bg.svg')",
+    },
+    zIndex: {
+      'back': '-1',
+    }
   },
   plugins: [],
 }
