@@ -1,5 +1,5 @@
 <template>
-    <header class="text-gray-600 body-font absolute w-full">
+    <header class="body-font absolute w-full">
         <div
             class="
                 container
@@ -13,7 +13,6 @@
         >
             <a
                 class="
-                    text-gray-900
                     md:mb-0
                     ml-3
                     text-2xl

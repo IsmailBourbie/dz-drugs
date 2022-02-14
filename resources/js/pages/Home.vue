@@ -1,7 +1,7 @@
 <template>
     <div class="container bg-slate-50 mx-auto h-screen">
         <div class="flex items-center justify-center h-full">
-            <div class="w-3/4">
+            <div class="lg:w-7/12 w-11/12">
                 <div class="relative mt-1">
                     <div
                         class="
@@ -67,11 +67,23 @@
                     />
                 </div>
 
-                <div class="text-center">
-                    <h1 class="text-3xl font-bold">
-                        Lorem ipsum dolor, sit amet consectetur adipisicing
-                        elit. Iure, architecto!
+                <div class="text-center lg:px-5 px-1 mt-8">
+                    <h1 class="text-base md:text-4xl font-bold">
+                        Lorem ipsum dolor sit amet, consectetur
                     </h1>
+                    <p class="lg:px-8 px-1.5 mt-5 2xl:px-24 text-sm">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                        sed do eiusmod tempor incididunt ut labore et dolore
+                        magna aliqua. Ut enim ad minim veniam, quis nostrud
+                        exercitation ullamco laboris nisi ut aliquip ex ea
+                        commodo consequat
+                    </p>
+                </div>
+
+                <div class="text-center mt-8">
+                    <a href="https://play.google.com/store/apps">
+                        <img src="/images/logos/play-badge.svg" alt="Google Play" class="mx-auto">
+                    </a>
                 </div>
             </div>
         </div>
