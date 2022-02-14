@@ -8,11 +8,9 @@ require('./bootstrap');
 
 import { createApp } from 'vue';
 import router from './router'
+import app from './App.vue'
 
 
-let app = createApp({
-
-
-})
-app.use(router)
-app.mount('#app')
+let drudz = createApp(app)
+drudz.use(router)
+drudz.mount('#app')
