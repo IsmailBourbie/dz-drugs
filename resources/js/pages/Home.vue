@@ -4,14 +4,17 @@
             container
             mx-auto
             h-screen
-            bg-medical-pattern bg-bottom bg-no-repeat
+            bg-medical-pattern dark:bg-medical-pattern-dark bg-bottom bg-no-repeat
         "
     >
         <div class="flex items-center justify-center h-full">
             <div class="lg:w-7/12 w-11/12 relative">
                 <div class="absolute -top-20 -left-20 z-back">
-                    <img src="/images/shapes/1.svg" alt="" />
+                    <img src="/images/shapes/1.svg" alt="" class="dark:hidden" />
+                    <img src="/images/shapes/1-dark.svg" alt=""  class="hidden dark:inline" />
                 </div>
+                <!-- <div class="absolute -top-20 -left-20 z-back hidden dark:block">
+                </div> -->
                 <div class="relative mt-1">
                     <div
                         class="
@@ -24,47 +27,17 @@
                             pointer-events-none
                         "
                     >
-                        <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="22.414"
-                            height="22.414"
-                            viewBox="0 0 22.414 22.414"
-                        >
-                            <g
-                                id="Group_5"
-                                data-name="Group 5"
-                                transform="translate(-2 -2)"
-                            >
-                                <path
-                                    id="primary"
-                                    d="M19.059,11.029A8.029,8.029,0,1,1,11.029,3,8.029,8.029,0,0,1,19.059,11.029ZM22.5,22.5l-5.735-5.735"
-                                    fill="none"
-                                    stroke="#000"
-                                    stroke-linecap="round"
-                                    stroke-linejoin="round"
-                                    stroke-width="2"
-                                />
-                                <line
-                                    id="primary-2"
-                                    data-name="primary"
-                                    x1="3.5"
-                                    y1="3.5"
-                                    transform="translate(19.5 19.5)"
-                                    fill="none"
-                                    stroke="#000"
-                                    stroke-linecap="round"
-                                    stroke-linejoin="round"
-                                    stroke-width="2"
-                                />
-                            </g>
-                        </svg>
+                        <img src="images/icons/search.svg" alt="" class="dark:hidden">
+                        <img src="images/icons/search-dark.svg" alt="" class="hidden dark:inline">
                     </div>
                     <input
                         type="text"
                         id="email-adress-icon"
                         class="
                             border border-gray-300
+                            dark:border-gray-600
                             text-gray-900 text-sm
+                            dark:bg-gray-600 dark:text-slate-100
                             rounded-lg
                             focus:ring-blue-500 focus:border-blue-500
                             block

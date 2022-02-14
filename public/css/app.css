@@ -507,6 +507,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 .flex {
   display: flex;
 }
+.hidden {
+  display: none;
+}
 .h-screen {
   height: 100vh;
 }
@@ -607,7 +610,7 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .text-gray-900 {
   --tw-text-opacity: 1;
-  color: rgb(17 24 39 / var(--tw-text-opacity));
+  color: rgb(46 52 64 / var(--tw-text-opacity));
 }
 .antialiased {
   -webkit-font-smoothing: antialiased;
@@ -620,6 +623,37 @@ Ensure the default browser behavior of the `hidden` attribute.
 .focus\:ring-blue-500:focus {
   --tw-ring-opacity: 1;
   --tw-ring-color: rgb(59 130 246 / var(--tw-ring-opacity));
+}
+.dark .dark\:block {
+  display: block;
+}
+.dark .dark\:inline {
+  display: inline;
+}
+.dark .dark\:hidden {
+  display: none;
+}
+.dark .dark\:border-gray-600 {
+  --tw-border-opacity: 1;
+  border-color: rgb(76 86 106 / var(--tw-border-opacity));
+}
+.dark .dark\:bg-gray-900 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(46 52 64 / var(--tw-bg-opacity));
+}
+.dark .dark\:bg-gray-600 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(76 86 106 / var(--tw-bg-opacity));
+}
+.dark .dark\:bg-medical-pattern-dark {
+  background-image: url('/images/shapes/bg-dark.svg');
+}
+.dark .dark\:fill-slate-100 {
+  fill: #ECEFF4;
+}
+.dark .dark\:text-slate-100 {
+  --tw-text-opacity: 1;
+  color: rgb(236 239 244 / var(--tw-text-opacity));
 }
 @media (min-width: 768px) {
 
