@@ -12,15 +12,10 @@
             "
         >
             <a class="md:mb-0 ml-3 text-2xl font-black"> DRUDZ </a>
-            <nav
-                class="
-                    md:ml-auto
-                    flex flex-wrap
-                    items-center
-                    text-base
-                    justify-center
-                "
-            >
+            <search-input-group class="w-80" v-if="this.searchInputVisible">
+                <search-input class="p-2" placeholder="Search drugs..." />
+            </search-input-group>
+            <nav class="flex flex-wrap items-center text-base justify-center">
                 <a class="mr-5 cursor-pointer">
                     <svg-icon src="/images/icons/toggle-mode-btn.svg" />
                 </a>
@@ -33,5 +28,14 @@
 </template>
 
 <script>
-export default {}
+import SearchInput from "../components/SearchInput.vue";
+import SearchInputGroup from "../components/SearchInputGroup.vue";
+export default {
+    components: { SearchInput, SearchInputGroup },
+    props: {
+        searchInputVisible: {
+            default: true
+        }
+    },
+};
 </script>

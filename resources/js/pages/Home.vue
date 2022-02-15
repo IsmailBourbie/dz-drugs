@@ -14,38 +14,9 @@
                 <div class="absolute -top-20 -left-20 z-back">
                     <svg-icon src="/images/shapes/1.svg" />
                 </div>
-                <div class="relative mt-1">
-                    <div
-                        class="
-                            flex
-                            absolute
-                            inset-y-0
-                            left-0
-                            items-center
-                            pl-3
-                            pointer-events-none
-                        "
-                    >
-                        <svg-icon src="/images/icons/search.svg" />
-                    </div>
-                    <input
-                        type="text"
-                        id="email-adress-icon"
-                        class="
-                            border border-gray-300
-                            dark:border-gray-600
-                            text-gray-900 text-sm
-                            dark:bg-gray-600 dark:text-slate-100
-                            rounded-lg
-                            focus:ring-blue-500 focus:border-blue-500
-                            block
-                            pl-12
-                            p-6
-                            w-full
-                        "
-                        placeholder="Search drugs, example: doliprane, paracetamol..."
-                    />
-                </div>
+                <search-input-group class="w-full">
+                    <search-input class="p-6" />
+                </search-input-group>
 
                 <div class="text-center lg:px-5 px-1 mt-8">
                     <h1 class="text-base md:text-4xl font-bold">
@@ -75,5 +46,9 @@
 </template>
 
 <script>
-export default {}
+import SearchInput from '../components/SearchInput.vue'
+import SearchInputGroup from '../components/SearchInputGroup.vue'
+export default {
+    components: { SearchInput, SearchInputGroup },
+}
 </script>

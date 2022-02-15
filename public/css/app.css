@@ -460,6 +460,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 .pointer-events-none {
   pointer-events: none;
 }
+.visible {
+  visibility: visible;
+}
 .absolute {
   position: absolute;
 }
@@ -492,14 +495,14 @@ Ensure the default browser behavior of the `hidden` attribute.
 .mr-5 {
   margin-right: 1.25rem;
 }
-.mt-1 {
-  margin-top: 0.25rem;
-}
 .mt-8 {
   margin-top: 2rem;
 }
 .mt-5 {
   margin-top: 1.25rem;
+}
+.mt-1 {
+  margin-top: 0.25rem;
 }
 .block {
   display: block;
@@ -521,6 +524,12 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .w-11\/12 {
   width: 91.666667%;
+}
+.w-80 {
+  width: 20rem;
+}
+.w-96 {
+  width: 24rem;
 }
 .cursor-pointer {
   cursor: pointer;
@@ -562,6 +571,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 .p-6 {
   padding: 1.5rem;
 }
+.p-2 {
+  padding: 0.5rem;
+}
 .px-1 {
   padding-left: 0.25rem;
   padding-right: 0.25rem;
@@ -575,6 +587,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .pl-12 {
   padding-left: 3rem;
+}
+.pl-4 {
+  padding-left: 1rem;
 }
 .text-center {
   text-align: center;
@@ -613,6 +628,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+.ring-red-800 {
+  --tw-ring-opacity: 1;
+  --tw-ring-color: rgb(153 27 27 / var(--tw-ring-opacity));
+}
 .focus\:border-blue-500:focus {
   --tw-border-opacity: 1;
   border-color: rgb(59 130 246 / var(--tw-border-opacity));
@@ -620,9 +639,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 .focus\:ring-blue-500:focus {
   --tw-ring-opacity: 1;
   --tw-ring-color: rgb(59 130 246 / var(--tw-ring-opacity));
-}
-.dark .dark\:block {
-  display: block;
 }
 .dark .dark\:inline {
   display: inline;
