@@ -11,16 +11,7 @@
                 items-center
             "
         >
-            <a
-                class="
-                    md:mb-0
-                    ml-3
-                    text-2xl
-                    font-black
-                "
-            >
-                DRUDZ
-            </a>
+            <a class="md:mb-0 ml-3 text-2xl font-black"> DRUDZ </a>
             <nav
                 class="
                     md:ml-auto
@@ -31,10 +22,10 @@
                 "
             >
                 <a class="mr-5 cursor-pointer">
-                    <img src="/images/icons/light-mode-btn.svg" />
+                    <svg-icon src="/images/icons/toggle-mode-btn.svg" />
                 </a>
                 <a class="mr-5 cursor-pointer">
-                    <img src="/images/icons/menu-btn.svg" />
+                    <svg-icon src="/images/icons/menu-btn.svg" />
                 </a>
             </nav>
         </div>
@@ -42,9 +33,5 @@
 </template>
 
 <script>
-export default {
-    mounted() {
-        console.log("Component mounted.");
-    },
-};
+export default {}
 </script>

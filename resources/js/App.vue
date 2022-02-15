@@ -4,11 +4,10 @@
 </template>
 
 <script>
-import TheNavbar from './components/TheNavebar.vue';
+import TheNavbar from "./components/TheNavebar.vue";
 export default {
-    components: { TheNavbar }
-}
+    components: { TheNavbar },
+};
 </script>
 
-<style>
-</style>
+<style></style>

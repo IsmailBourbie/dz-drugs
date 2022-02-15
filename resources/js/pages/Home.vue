@@ -4,17 +4,16 @@
             container
             mx-auto
             h-screen
-            bg-medical-pattern dark:bg-medical-pattern-dark bg-bottom bg-no-repeat
+            bg-medical-pattern
+            dark:bg-medical-pattern-dark
+            bg-bottom bg-no-repeat
         "
     >
         <div class="flex items-center justify-center h-full">
             <div class="lg:w-7/12 w-11/12 relative">
                 <div class="absolute -top-20 -left-20 z-back">
-                    <img src="/images/shapes/1.svg" alt="" class="dark:hidden" />
-                    <img src="/images/shapes/1-dark.svg" alt=""  class="hidden dark:inline" />
+                    <svg-icon src="/images/shapes/1.svg" />
                 </div>
-                <!-- <div class="absolute -top-20 -left-20 z-back hidden dark:block">
-                </div> -->
                 <div class="relative mt-1">
                     <div
                         class="
@@ -27,8 +26,7 @@
                             pointer-events-none
                         "
                     >
-                        <img src="images/icons/search.svg" alt="" class="dark:hidden">
-                        <img src="images/icons/search-dark.svg" alt="" class="hidden dark:inline">
+                        <svg-icon src="/images/icons/search.svg" />
                     </div>
                     <input
                         type="text"
@@ -77,7 +75,5 @@
 </template>
 
 <script>
-export default {
-
-};
+export default {}
 </script>
