@@ -36,7 +36,9 @@
                 </nav>
             </div>
         </header>
-        <TheMenu v-show="openMenu" @menuClosed="hideMenu" />
+        <Transition name="slidedown">
+            <TheMenu v-if="openMenu" @menuClosed="hideMenu" class="shadow-sm shadow-gray-600 dark:shadow-slate-100" />
+        </Transition>
     </div>
 </template>
 
@@ -85,3 +87,21 @@ export default {
     },
 };
 </script>
+<style>
+.slidedown-enter-active,
+.slidedown-leave-active {
+    transition: max-height 0.5s ease-in-out;
+}
+
+.slidedown-enter-to,
+.slidedown-leave-from {
+    overflow: hidden;
+    max-height: 1000px;
+}
+
+.slidedown-enter-from,
+.slidedown-leave-to {
+    overflow: hidden;
+    max-height: 0;
+}
+</style>
