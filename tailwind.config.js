@@ -15,14 +15,14 @@ module.exports = {
           100: "#ECEFF4"
         }
       },
+      backgroundImage: {
+        'medical-pattern': "url('/images/shapes/bg.svg')",
+        'medical-pattern-dark': "url('/images/shapes/bg-dark.svg')",
+      },
+      zIndex: {
+        'back': '-1',
+      }
     },
-    backgroundImage: {
-      'medical-pattern': "url('/images/shapes/bg.svg')",
-      'medical-pattern-dark': "url('/images/shapes/bg-dark.svg')",
-    },
-    zIndex: {
-      'back': '-1',
-    }
   },
   plugins: [],
   darkMode: 'class',
