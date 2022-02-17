@@ -57,7 +57,7 @@ export default {
     data() {
         return {
             theme: '',
-            openMenu: false
+            openMenu: true
         }
     },
     created() {

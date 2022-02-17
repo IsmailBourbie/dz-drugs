@@ -22813,7 +22813,7 @@ __webpack_require__.r(__webpack_exports__);
   data: function data() {
     return {
       theme: '',
-      openMenu: false
+      openMenu: true
     };
   },
   created: function created() {
@@ -23032,6 +23032,30 @@ var _hoisted_2 = {
 var _hoisted_3 = {
   "class": "container mx-auto p-5 flex jusrig"
 };
+var _hoisted_4 = {
+  "class": "container flex justify-center items-center h-screen ml-auto"
+};
+var _hoisted_5 = {
+  "class": "w-3/4"
+};
+
+var _hoisted_6 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<ul class=\"md:text-6xl text-4xl\"><li class=\"mb-2 md:py-2 py-1 font-black\"><a href=\"#\">About</a></li><li class=\"mb-2 md:py-2 py-1 font-black\"><a href=\"#\">Contact</a></li><li class=\"mb-2 md:py-2 py-1 font-black\"><a href=\"#\">Contiburte</a></li><li class=\"mb-2 md:py-2 py-1 font-black\"><a href=\"#\">Donate</a></li></ul>", 1);
+
+var _hoisted_7 = {
+  "class": "flex space-x-8 mt-20"
+};
+var _hoisted_8 = {
+  href: "#"
+};
+var _hoisted_9 = {
+  href: "#"
+};
+var _hoisted_10 = {
+  href: "#"
+};
+var _hoisted_11 = {
+  href: "#"
+};
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   var _component_svg_icon = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("svg-icon");
 
@@ -23043,7 +23067,15 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     })
   }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_svg_icon, {
     src: "/images/icons/close-btn.svg"
-  })])])])]);
+  })])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_4, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_5, [_hoisted_6, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("ul", _hoisted_7, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", _hoisted_8, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_svg_icon, {
+    src: "/images/icons/social/facebook.svg"
+  })])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", _hoisted_9, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_svg_icon, {
+    src: "/images/icons/social/twitter.svg"
+  })])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", _hoisted_10, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_svg_icon, {
+    src: "/images/icons/social/instgram.svg"
+  })])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", _hoisted_11, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_svg_icon, {
+    src: "/images/icons/social/github.svg"
+  })])])])])])]);
 }
 
 /***/ }),
