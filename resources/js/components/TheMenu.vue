@@ -38,35 +38,18 @@
                         <a href="#">Donate</a>
                     </li>
                 </ul>
-                <ul class="flex space-x-8 mt-20">
-                    <li>
-                        <a href="#">
-                            <svg-icon src="/images/icons/social/facebook.svg" />
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <svg-icon src="/images/icons/social/twitter.svg" />
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <svg-icon src="/images/icons/social/instgram.svg" />
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <svg-icon src="/images/icons/social/github.svg" />
-                        </a>
-                    </li>
-                </ul>
+                <social-media-links />
             </div>
         </div>
     </div>
 </template>
 
 <script>
+import SocialMediaLinks from '../components/SocialMediaLinks.vue';
 export default {
+    components: {
+        SocialMediaLinks
+    },
     methods: {
         close() {
             this.$emit('menuClosed')
