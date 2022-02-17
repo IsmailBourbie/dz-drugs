@@ -23103,7 +23103,7 @@ var _hoisted_5 = {
   "class": "w-3/4"
 };
 
-var _hoisted_6 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<ul class=\"md:text-6xl text-4xl\"><li class=\"mb-2 md:py-2 py-1 font-black\"><a href=\"#\">About</a></li><li class=\"mb-2 md:py-2 py-1 font-black\"><a href=\"#\">Contact</a></li><li class=\"mb-2 md:py-2 py-1 font-black\"><a href=\"#\">Contiburte</a></li><li class=\"mb-2 md:py-2 py-1 font-black\"><a href=\"#\">Donate</a></li></ul>", 1);
+var _hoisted_6 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<ul class=\"md:text-6xl text-4xl\"><li class=\"mb-2 md:py-2 py-1 font-black tracking-wider\"><a href=\"#\">About</a></li><li class=\"mb-2 md:py-2 py-1 font-black tracking-wider\"><a href=\"#\">Contact</a></li><li class=\"mb-2 md:py-2 py-1 font-black tracking-wider\"><a href=\"#\">Contiburte</a></li><li class=\"mb-2 md:py-2 py-1 font-black tracking-wider\"><a href=\"#\">Donate</a></li></ul>", 1);
 
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   var _component_svg_icon = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("svg-icon");
@@ -23265,7 +23265,7 @@ var _hoisted_4 = {
   "class": "absolute -top-20 -left-20 z-back"
 };
 
-var _hoisted_5 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"text-center lg:px-5 px-1 mt-8\"><h1 class=\"text-base md:text-4xl font-bold\"> Lorem ipsum dolor sit amet, consectetur </h1><p class=\"lg:px-8 px-1.5 mt-5 2xl:px-24 text-sm\"> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat </p></div><div class=\"text-center mt-8\"><a href=\"https://play.google.com/store/apps\"><img src=\"/images/logos/play-badge.svg\" alt=\"Google Play\" class=\"mx-auto\"></a></div>", 2);
+var _hoisted_5 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"text-center lg:px-5 px-1 mt-8\"><h1 class=\"text-base md:text-4xl font-bold\"> Lorem ipsum dolor sit amet, consectetur </h1><p class=\"lg:px-8 px-1.5 mt-5 2xl:px-24 text-sm\"> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat </p></div><div class=\"text-center mt-8\"><a href=\"https://play.google.com/store/apps\" class=\"inline-block\"><img src=\"/images/logos/play-badge.svg\" alt=\"Google Play\" class=\"mx-auto\"></a></div>", 2);
 
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   var _component_svg_icon = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("svg-icon");

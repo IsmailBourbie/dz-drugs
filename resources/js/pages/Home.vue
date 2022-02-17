@@ -32,7 +32,7 @@
                 </div>
 
                 <div class="text-center mt-8">
-                    <a href="https://play.google.com/store/apps">
+                    <a href="https://play.google.com/store/apps" class="inline-block">
                         <img
                             src="/images/logos/play-badge.svg"
                             alt="Google Play"

@@ -25,16 +25,16 @@
         >
             <div class="w-3/4">
                 <ul class="md:text-6xl text-4xl">
-                    <li class="mb-2 md:py-2 py-1 font-black">
+                    <li class="mb-2 md:py-2 py-1 font-black tracking-wider">
                         <a href="#">About</a>
                     </li>
-                    <li class="mb-2 md:py-2 py-1 font-black">
+                    <li class="mb-2 md:py-2 py-1 font-black tracking-wider">
                         <a href="#">Contact</a>
                     </li>
-                    <li class="mb-2 md:py-2 py-1 font-black">
+                    <li class="mb-2 md:py-2 py-1 font-black tracking-wider">
                         <a href="#">Contiburte</a>
                     </li>
-                    <li class="mb-2 md:py-2 py-1 font-black">
+                    <li class="mb-2 md:py-2 py-1 font-black tracking-wider">
                         <a href="#">Donate</a>
                     </li>
                 </ul>
