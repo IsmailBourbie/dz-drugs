@@ -13,16 +13,38 @@
         >
             <svg-icon src="/images/icons/search.svg" />
         </div>
-        <slot></slot>
+        <search-input :class="inputClass" :placeholder="InputPlaceholder" />
+        <search-result v-show="false" />
     </div>
 </template>
 
 <script>
 import SearchInput from './SearchInput.vue'
+import SearchResult from './SearchResult.vue'
 export default {
-    components: {
-        SearchInput
+    props: {
+        inputClass: {
+            type: String,
+            default: 'p-6'
+        },
+        InputPlaceholder: {
+            type: String,
+            default: 'Search drugs...'
+        }
     },
+    components: {
+        SearchInput, SearchResult
+    },
+    data() {
+        return {
+            hello: ''
+        }
+    },
+    methods: {
+        showSearchBox(data) {
+            alert(0)
+        }
+    }
 
 }
 </script>

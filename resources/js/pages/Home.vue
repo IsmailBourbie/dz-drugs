@@ -14,8 +14,7 @@
                 <div class="absolute -top-20 -left-20 z-back">
                     <svg-icon src="/images/shapes/1.svg" />
                 </div>
-                <search-input-group class="w-full">
-                    <search-input class="p-6" />
+                <search-input-group class="w-full" InputPlaceholder="Search drugs, example: doliprane, paracetamol...">
                 </search-input-group>
 
                 <div class="text-center lg:px-5 px-1 mt-8">

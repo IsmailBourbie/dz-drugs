@@ -12,15 +12,15 @@
                     items-center
                 "
             >
-                <a href="#" class="md:mb-0 ml-3 text-2xl font-black"> DRUDZ </a>
+                <a href="#" class="md:mb-0 ml-3 text-2xl font-black order-1"> DRUDZ </a>
                 <search-input-group
-                    class="w-80"
+                    class="w-72 z-30 order-3 mt-3 md:mt-0 mx-auto md:order-2"
                     v-if="currentRouteName !== 'Home'"
-                >
-                    <search-input class="p-2" placeholder="Search drugs..." />
+                    inputClass="p-2"
+                >                    
                 </search-input-group>
                 <nav
-                    class="flex flex-wrap items-center text-base justify-center"
+                    class="flex flex-wrap items-center text-base justify-center order-2 md:order-3"
                 >
                     <theme-switcher
                         :theme="theme"
@@ -57,7 +57,7 @@ export default {
     data() {
         return {
             theme: '',
-            openMenu: true
+            openMenu: false
         }
     },
     created() {

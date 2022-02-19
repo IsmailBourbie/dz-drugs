@@ -1,6 +1,8 @@
 <template>
     <input
         type="text"
+        v-model="searchInput"
+        @input="searchQuery"
         id="email-adress-icon"
         class="
             border border-gray-300
@@ -13,12 +15,21 @@
             pl-12
             w-full
         "
-        placeholder="Search drugs, example: doliprane, paracetamol..."
     />
 </template>
 
 <script>
 export default {
+    data() {
+        return {
+            searchInput: ''
+        }
+    },
+    methods: {
+        searchQuery() {
+            this.$emit('searching', this.searchInput)
+        }
+    }
 
 }
 </script>
