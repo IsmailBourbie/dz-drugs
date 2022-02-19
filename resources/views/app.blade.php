@@ -11,7 +11,7 @@
         <link rel="stylesheet" href="/css/app.css">
     </head>
     <body class="antialiased text-gray-600 dark:text-slate-100 dark:bg-gray-900">
-        <div id="app">
+        <div id="app" class="flex flex-col h-screen">
 
         </div>
 

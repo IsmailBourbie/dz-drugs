@@ -1,6 +1,6 @@
 <template>
     <div>
-        <header class="body-font absolute w-full">
+        <header class="body-font w-full">
             <div
                 class="
                     container

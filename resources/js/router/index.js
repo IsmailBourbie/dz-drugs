@@ -1,4 +1,5 @@
 import Home from '../pages/Home.vue'
+import Drug from '../pages/Drug.vue'
 import { createRouter, createWebHistory } from 'vue-router'
 
 const routes = [
@@ -6,6 +7,11 @@ const routes = [
     path: '/',
     name: 'Home',
     component: Home
+  },
+  {
+    path: '/drug',
+    name: 'Drug',
+    component: Drug
   }
 ]
 
