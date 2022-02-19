@@ -13,8 +13,15 @@
         >
             <svg-icon src="/images/icons/search.svg" />
         </div>
-        <search-input :class="inputClass" :placeholder="InputPlaceholder" />
-        <search-result v-show="false" />
+        <search-input
+            :class="inputClass"
+            :placeholder="InputPlaceholder"
+            @searching="search"
+        />
+        <search-result
+            v-if="drugs.length || dci.length"
+            :data="{ drugs, dci }"
+        />
     </div>
 </template>
 
@@ -37,13 +44,22 @@ export default {
     },
     data() {
         return {
-            hello: ''
+            drugs: {},
+            dci: {}
         }
     },
     methods: {
-        showSearchBox(data) {
-            alert(0)
-        }
+        search(query) {
+            if (query.length > 0) {
+                axios.get('/api/search/?q=' + query + '&limit=4').then((response) => {
+                    this.drugs = response.data.drugs
+                    this.dci = response.data.dci
+                })
+            } else {
+                this.drugs = {}
+                this.dci = {}
+            }
+        },
     }
 
 }

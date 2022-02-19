@@ -9,6 +9,9 @@ require('./bootstrap');
 import { createApp } from 'vue';
 import router from './router'
 
+import axios from 'axios'
+import VueAxios from 'vue-axios'
+
 import App from './App.vue'
 
 import SvgIcon from "./components/SvgIcon.vue";
@@ -18,6 +21,6 @@ let drudz = createApp(App)
 
 drudz.component('svg-icon', SvgIcon)
 
-drudz.use(router)
+drudz.use(router, axios, VueAxios)
 
 drudz.mount('#app')

@@ -21,6 +21,9 @@ module.exports = {
       },
       zIndex: {
         'back': '-1',
+      },
+      height: {
+        '1px': '1px'
       }
     },
   },
