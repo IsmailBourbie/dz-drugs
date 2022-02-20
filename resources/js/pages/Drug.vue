@@ -5,7 +5,7 @@
     >
         <div class="md:w-11/12 mx-auto">
             <h1 class="text-xl md:text-3xl font-semibold mb-5">{{ title }}:</h1>
-            <div class="mx-auto md:flex md:justify-between ">
+            <div class="mx-auto md:flex md:justify-between">
                 <DetailCardComponent
                     title="General informations"
                     :data="generalInfo"
@@ -16,6 +16,36 @@
                     :data="laboAndDciInfo"
                     class="md:w-1/2 md:mx-1 min-h-full"
                 />
+            </div>
+        </div>
+
+        <div class="md:w-11/12 mx-auto mt-6">
+            <h1 class="text-xl md:text-3xl font-semibold pb-2">
+                Other Generics
+            </h1>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor,
+                officia?
+            </p>
+            <div class="mt-6 ring-1 ring-gray-200 rounded-xl min-h-full">
+                <div class="overflow-x-auto p-3 max-h-56">
+                    <table class="table w-full text-left">
+                        <!-- head -->
+                        <thead>
+                            <tr>
+                                <th>Medicament</th>
+                                <th>Country</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- row 1 -->
+                            <tr>
+                                <td>Cy Ganderton</td>
+                                <td>Blue</td>
+                            </tr>                        
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
     </div>

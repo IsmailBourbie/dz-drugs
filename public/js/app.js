@@ -23599,6 +23599,9 @@ var _hoisted_3 = {
 var _hoisted_4 = {
   "class": "mx-auto md:flex md:justify-between"
 };
+
+var _hoisted_5 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"md:w-11/12 mx-auto mt-6\"><h1 class=\"text-xl md:text-3xl font-semibold pb-2\"> Other Generics </h1><p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor, officia? </p><div class=\"mt-6 ring-1 ring-gray-200 rounded-xl min-h-full\"><div class=\"overflow-x-auto p-3 max-h-56\"><table class=\"table w-full text-left\"><!-- head --><thead><tr><th>Medicament</th><th>Country</th></tr></thead><tbody><!-- row 1 --><tr><td>Cy Ganderton</td><td>Blue</td></tr></tbody></table></div></div></div>", 1);
+
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   var _component_DetailCardComponent = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("DetailCardComponent");
 
@@ -23616,7 +23619,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     "class": "md:w-1/2 md:mx-1 min-h-full"
   }, null, 8
   /* PROPS */
-  , ["data"])])])])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true);
+  , ["data"])])]), _hoisted_5])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true);
 }
 
 /***/ }),
