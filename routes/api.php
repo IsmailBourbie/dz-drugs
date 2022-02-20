@@ -25,7 +25,7 @@ Route::namespace('App\Http\Controllers\Api')->group(function() {
     Route::get('medicaments/{drug:slug}', 'DrugController@show');
 
     Route::get('dci/', 'DciController@index');
-    Route::get('dci/{dci:slug}', 'DciController@show');
+    Route::get('dci/{slug}', 'DciController@show');
 
     Route::get('laboratoires/', 'LaboratoryController@index');
     Route::get('laboratoires/{laboratory:slug}', 'LaboratoryController@show');

@@ -12,7 +12,7 @@ class Dci extends Model
     protected $guarded = [];
     public $timestamps = false;
 
-    public function drug() {
+    public function drugs() {
         return $this->hasMany(Drug::class);
     }
 }

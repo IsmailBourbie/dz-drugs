@@ -13,8 +13,9 @@ class DciController extends Controller
         return response()->json(Dci::all());
     }
 
-    public function show(Dci $dci)
+    public function show($slug)
     {
-        return response()->json($dci);
+
+        return response()->json(Dci::with('drugs')->where('slug', $slug)->first());
     }
 }
