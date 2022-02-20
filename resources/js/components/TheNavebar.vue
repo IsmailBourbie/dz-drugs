@@ -7,7 +7,7 @@
                     mx-auto
                     flex flex-wrap
                     justify-between
-                    p-5
+                    py-5
                     md:flex-row
                     items-center
                 "

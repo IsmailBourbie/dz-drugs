@@ -22757,6 +22757,7 @@ __webpack_require__.r(__webpack_exports__);
         axios.get('/api/search/?q=' + query + '&limit=4').then(function (response) {
           _this.drugs = response.data.drugs;
           _this.dci = response.data.dci;
+          console.log(response.data);
         });
       } else {
         this.drugs = {};
@@ -22971,7 +22972,35 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({});
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  props: {
+    slug: {
+      type: String,
+      required: true
+    }
+  },
+  data: function data() {
+    return {
+      drug: {}
+    };
+  },
+  computed: {
+    title: function title() {
+      return this.drug.name + " " + this.drug.dosage.name + " " + this.drug.form.name + " boite de " + this.drug.quantity;
+    }
+  },
+  mounted: function mounted() {
+    var _this = this;
+
+    axios.get('/api/medicaments/' + this.slug).then(function (response) {
+      _this.drug = response.data;
+      console.log(_this.drug);
+    })["catch"](function (error) {
+      console.log(error.response.status);
+      console.log(error.response.data.message);
+    });
+  }
+});
 
 /***/ }),
 
@@ -23178,7 +23207,10 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
       key: drug
     }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_router_link, {
       to: {
-        name: 'Drug'
+        name: 'Drug',
+        params: {
+          slug: drug.slug
+        }
       }
     }, {
       "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
@@ -23193,9 +23225,9 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
       _: 2
       /* DYNAMIC */
 
-    }, 1024
-    /* DYNAMIC_SLOTS */
-    )]);
+    }, 1032
+    /* PROPS, DYNAMIC_SLOTS */
+    , ["to"])]);
   }), 128
   /* KEYED_FRAGMENT */
   ))]), _hoisted_6])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $props.data.drugs.length && $props.data.dci.length ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_7)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $props.data.dci.length ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_8, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("ul", _hoisted_9, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($props.data.dci, function (drug) {
@@ -23359,7 +23391,7 @@ var _hoisted_1 = {
   "class": "body-font w-full"
 };
 var _hoisted_2 = {
-  "class": "container mx-auto flex flex-wrap justify-between p-5 md:flex-row items-center"
+  "class": "container mx-auto flex flex-wrap justify-between py-5 md:flex-row items-center"
 };
 
 var _hoisted_3 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
@@ -23461,16 +23493,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
 
 var _hoisted_1 = {
-  "class": "container mx-auto h-screen bg-medical-pattern dark:bg-medical-pattern-dark bg-bottom bg-no-repeat"
+  key: 0,
+  "class": "container mx-auto bg-slate-50 mt-6 p-5 rounded-lg"
 };
-
-var _hoisted_2 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h1", null, "Drug page", -1
-/* HOISTED */
-);
-
-var _hoisted_3 = [_hoisted_2];
+var _hoisted_2 = {
+  "class": "text-3xl font-semibold"
+};
 function render(_ctx, _cache, $props, $setup, $data, $options) {
-  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, _hoisted_3);
+  return Object.keys($data.drug).length ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h1", _hoisted_2, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($options.title), 1
+  /* TEXT */
+  )])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true);
 }
 
 /***/ }),
@@ -23611,9 +23643,10 @@ var routes = [{
   name: 'Home',
   component: _pages_Home_vue__WEBPACK_IMPORTED_MODULE_0__["default"]
 }, {
-  path: '/drug',
+  path: '/drug/:slug',
   name: 'Drug',
-  component: _pages_Drug_vue__WEBPACK_IMPORTED_MODULE_1__["default"]
+  component: _pages_Drug_vue__WEBPACK_IMPORTED_MODULE_1__["default"],
+  props: true
 }];
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ((0,vue_router__WEBPACK_IMPORTED_MODULE_2__.createRouter)({
   history: (0,vue_router__WEBPACK_IMPORTED_MODULE_2__.createWebHistory)(),

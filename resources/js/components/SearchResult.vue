@@ -16,7 +16,9 @@
         <div class="py-3 px-2 w-11/12 mx-auto" v-if="data.drugs.length">
             <ul class="text-sm">
                 <li class="p-1 mb-1" v-for="drug in data.drugs" :key="drug">
-                    <router-link :to="{ name: 'Drug' }">
+                    <router-link
+                        :to="{ name: 'Drug', params: { slug: drug.slug } }"
+                    >
                         <div class="flex space-x-2 items-center">
                             <svg-icon src="/images/icons/drug.svg" />
                             <span
