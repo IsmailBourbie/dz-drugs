@@ -23062,7 +23062,7 @@ __webpack_require__.r(__webpack_exports__);
     },
     generalInfo: function generalInfo() {
       return {
-        Commercial: this.drug.name + 'hello kehtkle izeh k',
+        Commercial: this.drug.name,
         Dosage: this.drug.dosage.name,
         Form: this.drug.form.name,
         Condition: "boite de " + this.drug.quantity
@@ -23176,7 +23176,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h5", _hoisted_4, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(key) + ": ", 1
     /* TEXT */
     ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
-      "class": "w-36 overflow-hidden text-ellipsis whitespace-nowrap",
+      "class": "w-1/2 overflow-hidden text-ellipsis whitespace-nowrap text-right",
       title: val.toUpperCase()
     }, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(val.toUpperCase()), 9
     /* TEXT, PROPS */

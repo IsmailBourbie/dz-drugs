@@ -10,7 +10,7 @@
                 <h5 class="text-lg font-semibold inline-block mr-2">
                     {{ key }}:
                 </h5>
-                <span class="w-36 overflow-hidden text-ellipsis whitespace-nowrap" :title="val.toUpperCase()">{{ val.toUpperCase() }}</span>
+                <span class="w-1/2 overflow-hidden text-ellipsis whitespace-nowrap text-right" :title="val.toUpperCase()">{{ val.toUpperCase() }}</span>
             </div>
         </div>
     </div>

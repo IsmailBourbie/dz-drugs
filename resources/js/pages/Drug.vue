@@ -44,7 +44,7 @@ export default {
         },
         generalInfo() {
             return {
-                Commercial: this.drug.name + 'hello kehtkle izeh k',
+                Commercial: this.drug.name,
                 Dosage: this.drug.dosage.name,
                 Form: this.drug.form.name,
                 Condition: "boite de " + this.drug.quantity
