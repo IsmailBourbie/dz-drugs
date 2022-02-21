@@ -23012,7 +23012,8 @@ __webpack_require__.r(__webpack_exports__);
   },
   data: function data() {
     return {
-      drug: {}
+      drug: {},
+      generics: {}
     };
   },
   computed: {
@@ -23036,12 +23037,25 @@ __webpack_require__.r(__webpack_exports__);
       };
     }
   },
+  methods: {
+    getGenerics: function getGenerics() {
+      var _this = this;
+
+      axios.get('/api/dci/' + this.drug.dci.slug).then(function (response) {
+        _this.generics = response.data.drugs;
+      })["catch"](function (error) {
+        console.log(error.response.status);
+        console.log(error.response.data.message);
+      });
+    }
+  },
   mounted: function mounted() {
-    var _this = this;
+    var _this2 = this;
 
     axios.get('/api/medicaments/' + this.slug).then(function (response) {
-      _this.drug = response.data;
-      console.log(response.data);
+      _this2.drug = response.data;
+
+      _this2.getGenerics();
     })["catch"](function (error) {
       console.log(error.response.status);
       console.log(error.response.data.message);
@@ -23599,8 +23613,38 @@ var _hoisted_3 = {
 var _hoisted_4 = {
   "class": "mx-auto md:flex md:justify-between"
 };
+var _hoisted_5 = {
+  key: 0,
+  "class": "md:w-11/12 mx-auto mt-6"
+};
 
-var _hoisted_5 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"md:w-11/12 mx-auto mt-6\"><h1 class=\"text-xl md:text-3xl font-semibold pb-2\"> Other Generics </h1><p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor, officia? </p><div class=\"mt-6 ring-1 ring-gray-200 rounded-xl min-h-full\"><div class=\"overflow-x-auto p-3 max-h-56\"><table class=\"table w-full text-left\"><!-- head --><thead><tr><th>Medicament</th><th>Country</th></tr></thead><tbody><!-- row 1 --><tr><td>Cy Ganderton</td><td>Blue</td></tr></tbody></table></div></div></div>", 1);
+var _hoisted_6 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h1", {
+  "class": "text-xl md:text-3xl font-semibold pb-2"
+}, " Other Generics ", -1
+/* HOISTED */
+);
+
+var _hoisted_7 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", null, " Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor, officia? ", -1
+/* HOISTED */
+);
+
+var _hoisted_8 = {
+  "class": "mt-6 ring-1 ring-gray-200 rounded-xl min-h-full"
+};
+var _hoisted_9 = {
+  "class": "overflow-x-auto p-3 max-h-56"
+};
+var _hoisted_10 = {
+  "class": "table w-full text-left"
+};
+
+var _hoisted_11 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("thead", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("tr", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("th", null, "Medicament"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("th", null, "Country")])], -1
+/* HOISTED */
+);
+
+var _hoisted_12 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, "drug.laboratory.country", -1
+/* HOISTED */
+);
 
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   var _component_DetailCardComponent = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("DetailCardComponent");
@@ -23619,7 +23663,15 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     "class": "md:w-1/2 md:mx-1 min-h-full"
   }, null, 8
   /* PROPS */
-  , ["data"])])]), _hoisted_5])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true);
+  , ["data"])])]), $data.generics.length ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_5, [_hoisted_6, _hoisted_7, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_8, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_9, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("table", _hoisted_10, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" head "), _hoisted_11, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("tbody", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" row 1 "), ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($data.generics, function (drug, index) {
+    return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("tr", {
+      key: index
+    }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(drug.name), 1
+    /* TEXT */
+    ), _hoisted_12]);
+  }), 128
+  /* KEYED_FRAGMENT */
+  ))])])])])])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true);
 }
 
 /***/ }),

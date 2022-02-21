@@ -41,29 +41,21 @@ class Drug extends Model
         return $this->belongsTo(Laboratory::class);
     }
 
-    public function scopeFilter($query, array $filters = []) {
-        $query->when(
-            $filters['dci'] ?? false,
-            fn ($query, $dci) => $query->whereHas(
+    public function scopeGenerics($query)
+    {
+        $query
+            ->whereHas(
                 'dci',
-                fn ($query) => $query->where('slug', $dci)
+                fn ($query) => $query->where('id', $this->dci->id)
             )
-        );
-
-        $query->when(
-            $filters['dosage'] ?? false,
-            fn ($query, $dosage) => $query->whereHas(
+            ->whereHas(
                 'dosage',
-                fn ($query) => $query->where('slug', $dosage)
+                fn ($query) => $query->where('id', $this->dosage->id)
             )
-        );
-
-        $query->when(
-            $filters['form'] ?? false,
-            fn ($query, $form) => $query->whereHas(
+            ->whereHas(
                 'form',
-                fn ($query) => $query->where('slug', $form)
+                fn ($query) => $query->where('id', $this->form->id)
             )
-        );
+            ->where('slug', '!=', $this->slug);
     }
 }

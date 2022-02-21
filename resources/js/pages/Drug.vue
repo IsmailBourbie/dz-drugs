@@ -19,7 +19,7 @@
             </div>
         </div>
 
-        <div class="md:w-11/12 mx-auto mt-6">
+        <div class="md:w-11/12 mx-auto mt-6" v-if="generics.length">
             <h1 class="text-xl md:text-3xl font-semibold pb-2">
                 Other Generics
             </h1>
@@ -39,10 +39,10 @@
                         </thead>
                         <tbody>
                             <!-- row 1 -->
-                            <tr>
-                                <td>Cy Ganderton</td>
-                                <td>Blue</td>
-                            </tr>                        
+                            <tr v-for="(drug, index) in generics" :key="index">
+                                <td>{{drug.name}}</td>
+                                <td>drug.laboratory.country</td>
+                            </tr>
                         </tbody>
                     </table>
                 </div>
@@ -62,6 +62,7 @@ export default {
     data() {
         return {
             drug: {},
+            generics: {}
         }
     },
     computed: {
@@ -85,10 +86,20 @@ export default {
             }
         }
     },
+    methods: {
+        getGenerics() {
+            axios.get('/api/dci/' + this.drug.dci.slug).then(response => {
+                this.generics = response.data.drugs;
+            }).catch((error) => {
+                console.log(error.response.status);
+                console.log(error.response.data.message);
+            })
+        }
+    },
     mounted() {
         axios.get('/api/medicaments/' + this.slug).then(response => {
             this.drug = response.data;
-            console.log(response.data);
+            this.getGenerics()
         }).catch((error) => {
             console.log(error.response.status);
             console.log(error.response.data.message);

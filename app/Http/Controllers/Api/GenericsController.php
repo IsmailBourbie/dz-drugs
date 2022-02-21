@@ -6,11 +6,10 @@ use App\Http\Controllers\Controller;
 use App\Models\Drug;
 use Illuminate\Http\Request;
 
-class DrugController extends Controller
+class GenericsController extends Controller
 {
-
-    public function show(Drug $drug)
+    public function __invoke(Drug $drug)
     {
-        return response()->json($drug);
+        return response()->json($drug->generics()->get());
     }
 }
