@@ -23052,8 +23052,7 @@ __webpack_require__.r(__webpack_exports__);
   },
   data: function data() {
     return {
-      drug: {},
-      generics: {}
+      drug: {}
     };
   },
   computed: {
@@ -23063,7 +23062,7 @@ __webpack_require__.r(__webpack_exports__);
     },
     generalInfo: function generalInfo() {
       return {
-        Commercial: this.drug.name,
+        Commercial: this.drug.name + 'hello kehtkle izeh k',
         Dosage: this.drug.dosage.name,
         Form: this.drug.form.name,
         Condition: "boite de " + this.drug.quantity
@@ -23161,14 +23160,12 @@ var _hoisted_2 = {
   "class": "p-2 ring-1 ring-gray-200 rounded-xl min-h-full"
 };
 var _hoisted_3 = {
-  "class": "text-2xl text-center"
+  "class": "text-2xl text-center p-2"
 };
 var _hoisted_4 = {
   "class": "text-lg font-semibold inline-block mr-2"
 };
-var _hoisted_5 = {
-  "class": "w-24"
-};
+var _hoisted_5 = ["title"];
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h3", _hoisted_3, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.title), 1
   /* TEXT */
@@ -23178,9 +23175,12 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
       key: index
     }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h5", _hoisted_4, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(key) + ": ", 1
     /* TEXT */
-    ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", _hoisted_5, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(val.toUpperCase()), 1
-    /* TEXT */
-    )]);
+    ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
+      "class": "w-36 overflow-hidden text-ellipsis whitespace-nowrap",
+      title: val.toUpperCase()
+    }, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(val.toUpperCase()), 9
+    /* TEXT, PROPS */
+    , _hoisted_5)]);
   }), 128
   /* KEYED_FRAGMENT */
   ))])]);

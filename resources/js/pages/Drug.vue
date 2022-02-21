@@ -35,7 +35,6 @@ export default {
     data() {
         return {
             drug: {},
-            generics: {}
         }
     },
     computed: {
@@ -45,7 +44,7 @@ export default {
         },
         generalInfo() {
             return {
-                Commercial: this.drug.name,
+                Commercial: this.drug.name + 'hello kehtkle izeh k',
                 Dosage: this.drug.dosage.name,
                 Form: this.drug.form.name,
                 Condition: "boite de " + this.drug.quantity
