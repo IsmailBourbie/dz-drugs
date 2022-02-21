@@ -13,49 +13,22 @@
                 />
                 <DetailCardComponent
                     title="Other informations"
-                    :data="laboAndDciInfo"
+                    :data="otherInfo"
                     class="md:w-1/2 md:mx-1 min-h-full"
                 />
             </div>
         </div>
 
-        <div class="md:w-11/12 mx-auto mt-6" v-if="generics.length">
-            <h1 class="text-xl md:text-3xl font-semibold pb-2">
-                Other Generics
-            </h1>
-            <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor,
-                officia?
-            </p>
-            <div class="mt-6 ring-1 ring-gray-200 rounded-xl min-h-full">
-                <div class="overflow-x-auto p-3 max-h-56">
-                    <table class="table w-full text-left">
-                        <!-- head -->
-                        <thead>
-                            <tr>
-                                <th>Medicament</th>
-                                <th>Country</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <!-- row 1 -->
-                            <tr v-for="(drug, index) in generics" :key="index">
-                                <td>{{drug.name}}</td>
-                                <td>drug.laboratory.country</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </div>
+        <GenericsTable :slug="drug.slug"/>
     </div>
 </template>
 
 <script>
 import DetailCardComponent from "../components/DetailCardComponent.vue";
+import GenericsTable from "../components/GenericsTable.vue";
 
 export default {
-    components: { DetailCardComponent },
+    components: { DetailCardComponent, GenericsTable },
     props: {
         slug: { type: String, required: true }
     },
@@ -67,17 +40,18 @@ export default {
     },
     computed: {
         title() {
-            return this.drug.name + " " + this.drug.dosage.name + " " + this.drug.form.name + " boite de " + this.drug.quantity
+            let durgInfo = Object.values(this.generalInfo)
+            return durgInfo.join(' ');
         },
         generalInfo() {
             return {
                 Commercial: this.drug.name,
                 Dosage: this.drug.dosage.name,
                 Form: this.drug.form.name,
-                Condition: " boite de " + this.drug.quantity
+                Condition: "boite de " + this.drug.quantity
             }
         },
-        laboAndDciInfo() {
+        otherInfo() {
             return {
                 Dci: this.drug.dci.name,
                 Tarif: this.drug.dci.tarif + 'DA',
@@ -86,20 +60,9 @@ export default {
             }
         }
     },
-    methods: {
-        getGenerics() {
-            axios.get('/api/dci/' + this.drug.dci.slug).then(response => {
-                this.generics = response.data.drugs;
-            }).catch((error) => {
-                console.log(error.response.status);
-                console.log(error.response.data.message);
-            })
-        }
-    },
     mounted() {
         axios.get('/api/medicaments/' + this.slug).then(response => {
             this.drug = response.data;
-            this.getGenerics()
         }).catch((error) => {
             console.log(error.response.status);
             console.log(error.response.data.message);
