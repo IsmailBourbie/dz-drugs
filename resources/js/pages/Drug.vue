@@ -6,12 +6,12 @@
         <div class="md:w-11/12 mx-auto">
             <h1 class="text-xl md:text-3xl font-semibold mb-5">{{ title }}:</h1>
             <div class="mx-auto md:flex md:justify-between">
-                <DetailCardComponent
+                <DetailCard
                     title="General informations"
                     :data="generalInfo"
                     class="md:w-1/2 md:mx-1 min-h-full"
                 />
-                <DetailCardComponent
+                <DetailCard
                     title="Other informations"
                     :data="otherInfo"
                     class="md:w-1/2 md:mx-1 min-h-full"
@@ -24,11 +24,11 @@
 </template>
 
 <script>
-import DetailCardComponent from "../components/DetailCardComponent.vue";
+import DetailCard from "../components/DetailCard.vue";
 import GenericsTable from "../components/GenericsTable.vue";
 
 export default {
-    components: { DetailCardComponent, GenericsTable },
+    components: { DetailCard, GenericsTable },
     data() {
         return {
             drug: {},

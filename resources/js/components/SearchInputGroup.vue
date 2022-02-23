@@ -41,26 +41,26 @@ export default {
     },
     data() {
         return {
-            drugs: {},
-            dci: {},
+            drugs: [],
+            dci: [],
             open: false
         }
     },
     methods: {
-        search(query) {
+        async search(query) {
             if (query.length > 1) {
-                axios.get('/api/search/?q=' + query + '&limit=4').then((response) => {
+                await axios.get('/api/search/?q=' + query + '&limit=4').then((response) => {
                     this.drugs = response.data.drugs
                     this.dci = response.data.dci
-                    this.toggle()
                 })
             } else {
-                this.drugs = {}
-                this.dci = {}
+                this.drugs = []
+                this.dci = []
             }
+            this.toggle()
         },
         toggle() {
-            this.open = (this.drugs.length  || this.dci.length) ? true : false
+            this.open = (this.drugs.length || this.dci.length) ? true : false
         },
         close(e) {
             if (!this.$el.contains(e.target)) {
