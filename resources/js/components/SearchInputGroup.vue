@@ -54,7 +54,6 @@ export default {
                 axios.get('/api/search/?q=' + query + '&limit=4').then((response) => {
                     this.drugs = response.data.drugs
                     this.dci = response.data.dci
-                    console.log(response.data)
                 })
             } else {
                 this.drugs = {}

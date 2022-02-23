@@ -22725,25 +22725,33 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
-  props: {
-    slug: {
-      type: String,
-      required: true
-    }
-  },
   data: function data() {
     return {
       generics: {}
     };
   },
-  mounted: function mounted() {
-    var _this = this;
+  methods: {
+    fetchGenerics: function fetchGenerics(slug) {
+      var _this = this;
 
-    axios.get('/api/generics/' + this.slug).then(function (response) {
-      _this.generics = response.data;
-    })["catch"](function (error) {
-      console.log(error.response.status);
-      console.log(error.response.data.message);
+      axios.get('/api/generics/' + slug).then(function (response) {
+        _this.generics = {};
+        _this.generics = response.data;
+      })["catch"](function (error) {
+        console.log(error.response.status);
+        console.log(error.response.data.message);
+      });
+    }
+  },
+  created: function created() {
+    var _this2 = this;
+
+    this.$watch(function () {
+      return _this2.$route.params;
+    }, function (param) {
+      _this2.fetchGenerics(param.slug);
+    }, {
+      immediate: true
     });
   }
 });
@@ -22820,7 +22828,6 @@ __webpack_require__.r(__webpack_exports__);
         axios.get('/api/search/?q=' + query + '&limit=4').then(function (response) {
           _this.drugs = response.data.drugs;
           _this.dci = response.data.dci;
-          console.log(response.data);
         });
       } else {
         this.drugs = {};
@@ -23044,12 +23051,6 @@ __webpack_require__.r(__webpack_exports__);
     DetailCardComponent: _components_DetailCardComponent_vue__WEBPACK_IMPORTED_MODULE_0__["default"],
     GenericsTable: _components_GenericsTable_vue__WEBPACK_IMPORTED_MODULE_1__["default"]
   },
-  props: {
-    slug: {
-      type: String,
-      required: true
-    }
-  },
   data: function data() {
     return {
       drug: {}
@@ -23077,14 +23078,28 @@ __webpack_require__.r(__webpack_exports__);
       };
     }
   },
-  mounted: function mounted() {
-    var _this = this;
+  methods: {
+    fetchDrugData: function fetchDrugData(slug) {
+      var _this = this;
 
-    axios.get('/api/medicaments/' + this.slug).then(function (response) {
-      _this.drug = response.data;
-    })["catch"](function (error) {
-      console.log(error.response.status);
-      console.log(error.response.data.message);
+      console.log(slug);
+      axios.get('/api/medicaments/' + slug).then(function (response) {
+        _this.drug = response.data;
+      })["catch"](function (error) {
+        console.log(error.response.status);
+        console.log(error.response.data.message);
+      });
+    }
+  },
+  created: function created() {
+    var _this2 = this;
+
+    this.$watch(function () {
+      return _this2.$route.params;
+    }, function (params) {
+      _this2.fetchDrugData(params.slug);
+    }, {
+      immediate: true
     });
   }
 });
@@ -28926,7 +28941,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.slidedown-enter-active,\n.slidedown-leave-active {\n    transition: max-height 0.5s ease-in-out;\n}\n.slidedown-enter-to,\n.slidedown-leave-from {\n    overflow: hidden;\n    max-height: 1000px;\n}\n.slidedown-enter-from,\n.slidedown-leave-to {\n    overflow: hidden;\n    max-height: 0;\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.slidedown-enter-active,\r\n.slidedown-leave-active {\r\n    transition: max-height 0.5s ease-in-out;\n}\n.slidedown-enter-to,\r\n.slidedown-leave-from {\r\n    overflow: hidden;\r\n    max-height: 1000px;\n}\n.slidedown-enter-from,\r\n.slidedown-leave-to {\r\n    overflow: hidden;\r\n    max-height: 0;\n}\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 

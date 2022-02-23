@@ -32,24 +32,30 @@
 
 <script>
 export default {
-    props: {
-        slug: {
-            type: String,
-            required: true
-        }
-    },
     data() {
         return {
             generics: {}
         }
     },
-    mounted() {
-        axios.get('/api/generics/' + this.slug).then(response => {
-            this.generics = response.data;
-        }).catch((error) => {
-            console.log(error.response.status);
-            console.log(error.response.data.message);
-        })
+    methods: {
+        fetchGenerics(slug) {
+            axios.get('/api/generics/' + slug).then(response => {
+                this.generics = {}
+                this.generics = response.data;
+            }).catch((error) => {
+                console.log(error.response.status);
+                console.log(error.response.data.message);
+            })
+        }
+    },
+    created() {
+        this.$watch(
+            () => this.$route.params,
+            (param) => {
+                this.fetchGenerics(param.slug)
+            },
+            { immediate: true }
+        )
     }
 
 }

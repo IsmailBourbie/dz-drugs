@@ -19,7 +19,7 @@
             </div>
         </div>
 
-        <GenericsTable :slug="drug.slug"/>
+        <GenericsTable :slug="drug.slug" />
     </div>
 </template>
 
@@ -29,9 +29,6 @@ import GenericsTable from "../components/GenericsTable.vue";
 
 export default {
     components: { DetailCardComponent, GenericsTable },
-    props: {
-        slug: { type: String, required: true }
-    },
     data() {
         return {
             drug: {},
@@ -59,13 +56,25 @@ export default {
             }
         }
     },
-    mounted() {
-        axios.get('/api/medicaments/' + this.slug).then(response => {
-            this.drug = response.data;
-        }).catch((error) => {
-            console.log(error.response.status);
-            console.log(error.response.data.message);
-        })
+    methods: {
+        fetchDrugData(slug) {
+            console.log(slug);
+            axios.get('/api/medicaments/' + slug).then(response => {
+                this.drug = response.data;
+            }).catch((error) => {
+                console.log(error.response.status);
+                console.log(error.response.data.message);
+            })
+        }
+    },
+    created() {
+        this.$watch(
+            () => this.$route.params,
+            (params) => {
+                this.fetchDrugData(params.slug)
+            },
+            { immediate: true }
+        )
     }
 }
 </script>
