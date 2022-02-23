@@ -58,7 +58,6 @@ export default {
     },
     methods: {
         fetchDrugData(slug) {
-            console.log(slug);
             axios.get('/api/medicaments/' + slug).then(response => {
                 this.drug = response.data;
             }).catch((error) => {

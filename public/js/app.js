@@ -22817,23 +22817,37 @@ __webpack_require__.r(__webpack_exports__);
   data: function data() {
     return {
       drugs: {},
-      dci: {}
+      dci: {},
+      open: false
     };
   },
   methods: {
     search: function search(query) {
       var _this = this;
 
-      if (query.length > 0) {
+      if (query.length > 1) {
         axios.get('/api/search/?q=' + query + '&limit=4').then(function (response) {
           _this.drugs = response.data.drugs;
           _this.dci = response.data.dci;
+
+          _this.toggle();
         });
       } else {
         this.drugs = {};
         this.dci = {};
       }
+    },
+    toggle: function toggle() {
+      this.open = this.drugs.length || this.dci.length ? true : false;
+    },
+    close: function close(e) {
+      if (!this.$el.contains(e.target)) {
+        this.open = false;
+      }
     }
+  },
+  created: function created() {
+    window.addEventListener("click", this.close);
   }
 });
 
@@ -23082,7 +23096,6 @@ __webpack_require__.r(__webpack_exports__);
     fetchDrugData: function fetchDrugData(slug) {
       var _this = this;
 
-      console.log(slug);
       axios.get('/api/medicaments/' + slug).then(function (response) {
         _this.drug = response.data;
       })["catch"](function (error) {
@@ -23328,7 +23341,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     onSearching: $options.search
   }, null, 8
   /* PROPS */
-  , ["class", "placeholder", "onSearching"]), $data.drugs.length || $data.dci.length ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(_component_search_result, {
+  , ["class", "placeholder", "onSearching"]), $data.open ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(_component_search_result, {
     key: 0,
     data: {
       drugs: $data.drugs,

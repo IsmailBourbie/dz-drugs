@@ -18,10 +18,7 @@
             :placeholder="InputPlaceholder"
             @searching="search"
         />
-        <search-result
-            v-if="drugs.length || dci.length"
-            :data="{ drugs, dci }"
-        />
+        <search-result v-if="open" :data="{ drugs, dci }" />
     </div>
 </template>
 
@@ -45,22 +42,35 @@ export default {
     data() {
         return {
             drugs: {},
-            dci: {}
+            dci: {},
+            open: false
         }
     },
     methods: {
         search(query) {
-            if (query.length > 0) {
+            if (query.length > 1) {
                 axios.get('/api/search/?q=' + query + '&limit=4').then((response) => {
                     this.drugs = response.data.drugs
                     this.dci = response.data.dci
+                    this.toggle()
                 })
             } else {
                 this.drugs = {}
                 this.dci = {}
             }
         },
-    }
+        toggle() {
+            this.open = (this.drugs.length  || this.dci.length) ? true : false
+        },
+        close(e) {
+            if (!this.$el.contains(e.target)) {
+                this.open = false;
+            }
+        }
+    },
+    created() {
+        window.addEventListener("click", this.close);
+    },
 
 }
 </script>
