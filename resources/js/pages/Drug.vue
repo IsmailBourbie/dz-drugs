@@ -4,14 +4,19 @@
         v-if="Object.keys(drug).length"
     >
         <div class="md:w-11/12 mx-auto">
-            <h1 class="text-xl md:text-3xl font-semibold mb-5">{{ title }}:</h1>
+            <h1 class="text-xl md:text-3xl font-semibold mb-5">
+                {{ title }}:
+                <router-link to="#" class="text-lg underline mx-2 font-normal">
+                    {{ this.drug.dci.name }}
+                </router-link>
+            </h1>
             <div class="mx-auto md:flex md:justify-between">
-                <DetailCard
+                <DrugDetailCard
                     title="General informations"
                     :data="generalInfo"
                     class="md:w-1/2 md:mx-1 min-h-full"
                 />
-                <DetailCard
+                <DrugDetailCard
                     title="Other informations"
                     :data="otherInfo"
                     class="md:w-1/2 md:mx-1 min-h-full"
@@ -19,16 +24,16 @@
             </div>
         </div>
 
-        <GenericsTable :slug="drug.slug" />
+        <DrugGenericsTable :slug="drug.slug" />
     </div>
 </template>
 
 <script>
-import DetailCard from "../components/DetailCard.vue";
-import GenericsTable from "../components/GenericsTable.vue";
+import DrugDetailCard from "../components/DrugDetailCard.vue";
+import DrugGenericsTable from "../components/DrugGenericsTable.vue";
 
 export default {
-    components: { DetailCard, GenericsTable },
+    components: { DrugDetailCard, DrugGenericsTable },
     data() {
         return {
             drug: {},

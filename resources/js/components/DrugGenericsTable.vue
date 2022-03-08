@@ -19,7 +19,17 @@
                     <tbody>
                         <!-- row 1 -->
                         <tr v-for="(drug, index) in generics" :key="index">
-                            <td>{{ drug.name }}</td>
+                            <td class="py-2">
+                                <router-link
+                                    class="hover:text-blue-400"
+                                    :to="{
+                                        name: 'Drug',
+                                        params: { slug: drug.slug },
+                                    }"
+                                >
+                                    {{ drug.name }}
+                                </router-link>
+                            </td>
                             <td>{{ drug.laboratory.name }}</td>
                             <td>{{ drug.laboratory.country }}</td>
                         </tr>
