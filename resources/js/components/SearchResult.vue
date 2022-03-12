@@ -35,12 +35,12 @@
                 </li>
             </ul>
             <div class="text-right">
-                <a
-                    href="#"
+                <router-link
+                    :to="{ name: 'Search', query: { q: query, type: 'drug' } }"
                     class="p-4 underline text-gray-500 dark:text-gray-300"
                 >
                     explore more drugs...
-                </a>
+                </router-link>
             </div>
         </div>
 
@@ -61,12 +61,12 @@
                 </li>
             </ul>
             <div class="text-right">
-                <a
-                    href="#"
+                <router-link
+                    :to="{ name: 'Search', query: { q: query, type: 'dci' } }"
                     class="p-4 underline text-gray-500 dark:text-gray-300"
                 >
                     explore more dci...
-                </a>
+                </router-link>
             </div>
         </div>
     </div>
@@ -77,9 +77,11 @@ export default {
     props: {
         data: {
             required: true
+        },
+        query: {
+            required: true
         }
     }
-
 }
 </script>
 

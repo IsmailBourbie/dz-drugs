@@ -18,7 +18,7 @@
             :placeholder="InputPlaceholder"
             @searching="search"
         />
-        <search-result v-if="open" :data="{ drugs, dci }" />
+        <search-result v-if="open" :data="{ drugs, dci }" :query="query" />
     </div>
 </template>
 
@@ -43,11 +43,13 @@ export default {
         return {
             drugs: [],
             dci: [],
+            query: "",
             open: false
         }
     },
     methods: {
         async search(query) {
+            this.query = query
             if (query.length > 1) {
                 await axios.get('/api/search/?q=' + query + '&limit=4').then((response) => {
                     this.drugs = response.data.drugs
