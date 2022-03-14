@@ -11,8 +11,15 @@ class Dci extends Model
 
     protected $guarded = [];
     public $timestamps = false;
+    protected $appends = ['title'];
 
-    public function drugs() {
+    public function getTitleAttribute() // Accessor
+    {
+        return $this->name;
+    }
+
+    public function drugs()
+    {
         return $this->hasMany(Drug::class);
     }
 }

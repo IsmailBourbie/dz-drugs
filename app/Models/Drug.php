@@ -19,7 +19,12 @@ class Drug extends Model
 
     public $timestamps = false;
     protected $with = ['dci', 'form', 'dosage', 'laboratory'];
+    protected $appends = ['title'];
 
+    public function getTitleAttribute() // Accessor
+    {
+        return $this->name . ' ' . $this->form->name . ' ' .$this->dosage->name;
+    }
 
     public function dosage()
     {
