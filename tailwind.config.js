@@ -24,7 +24,10 @@ module.exports = {
       },
       height: {
         '1px': '1px'
-      }
+      },
+      borderWidth: {        
+        '20': '20px',
+      }  
     },
   },
   plugins: [],

@@ -14,12 +14,10 @@
                 <DrugDetailCard
                     title="General informations"
                     :data="generalInfo"
-                    class="md:w-1/2 md:mx-1 min-h-full"
                 />
                 <DrugDetailCard
                     title="Other informations"
                     :data="otherInfo"
-                    class="md:w-1/2 md:mx-1 min-h-full"
                 />
             </div>
         </div>

@@ -1,6 +1,6 @@
 <template>
-    <div class="mt-5">
-        <div class="p-2 ring-1 ring-gray-200 rounded-xl min-h-full">
+    <div class="mt-5 md:w-1/2 md:mx-1 min-h-full shadow-md dark:shadow-slate-800 ring-1 rounded ring-gray-200">
+        <div class="p-2 min-h-full">
             <h3 class="text-2xl text-center p-2">{{ title }}</h3>
             <div
                 class="flex justify-between items-center py-1 px-4"

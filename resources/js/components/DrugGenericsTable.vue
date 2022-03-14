@@ -11,15 +11,15 @@
                     <!-- head -->
                     <thead>
                         <tr>
-                            <th>Medicament</th>
-                            <th>Laboratory</th>
-                            <th>Country</th>
+                            <th class="p-2">Medicament</th>
+                            <th class="p-2">Laboratory</th>
+                            <th class="p-2">Country</th>
                         </tr>
                     </thead>
-                    <tbody>
+                    <tbody class="before:content-['\200C'] before:block before:leading-4">
                         <!-- row 1 -->
-                        <tr v-for="(drug, index) in generics" :key="index">
-                            <td class="py-2">
+                        <tr v-for="(drug, index) in generics" :key="index" class="odd:bg-gray-50 dark:odd:bg-gray-700">
+                            <td class="p-2">
                                 <router-link
                                     class="hover:text-blue-400"
                                     :to="{
@@ -30,8 +30,8 @@
                                     {{ drug.name }}
                                 </router-link>
                             </td>
-                            <td>{{ drug.laboratory.name }}</td>
-                            <td>{{ drug.laboratory.country }}</td>
+                            <td class="p-2">{{ drug.laboratory.name }}</td>
+                            <td class="p-2">{{ drug.laboratory.country }}</td>
                         </tr>
                     </tbody>
                 </table>
