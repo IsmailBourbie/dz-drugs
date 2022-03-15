@@ -23240,12 +23240,16 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
   data: function data() {
     // TODO: Implement IsDrug boolean
     return {
-      isdrug: true,
       drugs: [],
       dci: [],
       query: "",
       type: ""
     };
+  },
+  computed: {
+    isDci: function isDci() {
+      return this.type == 'dci';
+    }
   },
   methods: {
     search: function search(query) {
@@ -24084,31 +24088,41 @@ __webpack_require__.r(__webpack_exports__);
 var _hoisted_1 = {
   "class": "container mx-auto pt-1 mt-8"
 };
-
-var _hoisted_2 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+var _hoisted_2 = {
   "class": "flex justify-center"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
-  "class": "p-1 mx-3 border-b-2 w-14 text-center text-lg"
-}, " Drug "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
-  "class": "p-1 mx-3 border-b-2 w-14 text-center text-lg"
-}, " Dci ")], -1
-/* HOISTED */
-);
-
+};
 var _hoisted_3 = {
   "class": "mt-10 w-3/4 mx-auto"
 };
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   var _component_SearchPageList = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("SearchPageList");
 
-  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, [_hoisted_2, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_3, [_ctx.isDrug ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(_component_SearchPageList, {
+  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
+    "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)(["p-1 mx-3 border-b-2 w-40 text-center text-lg", {
+      'border-blue-600': !$options.isDci
+    }]),
+    onClick: _cache[0] || (_cache[0] = function ($event) {
+      return $data.type = 'drug';
+    })
+  }, " Commercial name ", 2
+  /* CLASS */
+  ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
+    "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)(["p-1 mx-3 border-b-2 w-40 text-center text-lg", {
+      'border-blue-600': $options.isDci
+    }]),
+    onClick: _cache[1] || (_cache[1] = function ($event) {
+      return $data.type = 'dci';
+    })
+  }, " Substance - DCI ", 2
+  /* CLASS */
+  )]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_3, [$options.isDci ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(_component_SearchPageList, {
     key: 0,
-    data: $data.drugs
+    data: $data.dci
   }, null, 8
   /* PROPS */
   , ["data"])) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(_component_SearchPageList, {
     key: 1,
-    data: $data.dci
+    data: $data.drugs
   }, null, 8
   /* PROPS */
   , ["data"]))])]);
