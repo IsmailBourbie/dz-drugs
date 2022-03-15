@@ -551,6 +551,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 .mt-10 {
   margin-top: 2.5rem;
 }
+.mt-16 {
+  margin-top: 4rem;
+}
 .block {
   display: block;
 }
@@ -813,6 +816,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   --tw-text-opacity: 1;
   color: rgb(107 114 128 / var(--tw-text-opacity));
 }
+.text-blue-600 {
+  --tw-text-opacity: 1;
+  color: rgb(37 99 235 / var(--tw-text-opacity));
+}
 .underline {
   -webkit-text-decoration-line: underline;
           text-decoration-line: underline;
@@ -866,6 +873,18 @@ Ensure the default browser behavior of the `hidden` attribute.
 .odd\:bg-gray-50:nth-child(odd) {
   --tw-bg-opacity: 1;
   background-color: rgb(249 250 251 / var(--tw-bg-opacity));
+}
+.odd\:bg-slate-400:nth-child(odd) {
+  --tw-bg-opacity: 1;
+  background-color: rgb(148 163 184 / var(--tw-bg-opacity));
+}
+.odd\:bg-slate-100:nth-child(odd) {
+  --tw-bg-opacity: 1;
+  background-color: rgb(236 239 244 / var(--tw-bg-opacity));
+}
+.odd\:bg-slate-50:nth-child(odd) {
+  --tw-bg-opacity: 1;
+  background-color: rgb(248 250 252 / var(--tw-bg-opacity));
 }
 .hover\:text-blue-400:hover {
   --tw-text-opacity: 1;
@@ -924,6 +943,18 @@ Ensure the default browser behavior of the `hidden` attribute.
   --tw-bg-opacity: 1;
   background-color: rgb(55 65 81 / var(--tw-bg-opacity));
 }
+.dark .dark\:odd\:bg-slate-800:nth-child(odd) {
+  --tw-bg-opacity: 1;
+  background-color: rgb(30 41 59 / var(--tw-bg-opacity));
+}
+.dark .dark\:odd\:bg-slate-600:nth-child(odd) {
+  --tw-bg-opacity: 1;
+  background-color: rgb(71 85 105 / var(--tw-bg-opacity));
+}
+.dark .dark\:odd\:bg-slate-700:nth-child(odd) {
+  --tw-bg-opacity: 1;
+  background-color: rgb(51 65 85 / var(--tw-bg-opacity));
+}
 @media (min-width: 768px) {
 
   .md\:order-2 {
@@ -959,6 +990,10 @@ Ensure the default browser behavior of the `hidden` attribute.
     width: 91.666667%;
   }
 
+  .md\:w-3\/4 {
+    width: 75%;
+  }
+
   .md\:flex-row {
     flex-direction: row;
   }
@@ -985,6 +1020,11 @@ Ensure the default browser behavior of the `hidden` attribute.
   .md\:text-4xl {
     font-size: 2.25rem;
     line-height: 2.5rem;
+  }
+
+  .md\:text-lg {
+    font-size: 1.125rem;
+    line-height: 1.75rem;
   }
 }
 @media (min-width: 1024px) {

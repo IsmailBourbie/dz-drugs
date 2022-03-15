@@ -3,6 +3,7 @@
         type="text"
         v-model="searchInput"
         @input="searchQuery"
+        @keydown.enter="goToSearchPage"
         id="email-adress-icon"
         class="
             border border-gray-300
@@ -28,6 +29,9 @@ export default {
     methods: {
         searchQuery() {
             this.$emit('searching', this.searchInput)
+        },
+        goToSearchPage() {
+            this.$router.push({ path: '/Search', query: { q: this.searchInput} })
         }
     }
 

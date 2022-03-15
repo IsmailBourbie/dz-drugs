@@ -15,10 +15,7 @@
                     title="General informations"
                     :data="generalInfo"
                 />
-                <DrugDetailCard
-                    title="Other informations"
-                    :data="otherInfo"
-                />
+                <DrugDetailCard title="Other informations" :data="otherInfo" />
             </div>
         </div>
 
@@ -73,7 +70,9 @@ export default {
         this.$watch(
             () => this.$route.params,
             (params) => {
-                this.fetchDrugData(params.slug)
+                if (params.slug) {
+                    this.fetchDrugData(params.slug)
+                }
             },
             { immediate: true }
         )

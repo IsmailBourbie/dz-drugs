@@ -22760,7 +22760,9 @@ __webpack_require__.r(__webpack_exports__);
     this.$watch(function () {
       return _this2.$route.params;
     }, function (param) {
-      _this2.fetchGenerics(param.slug);
+      if (param.slug) {
+        _this2.fetchGenerics(param.slug);
+      }
     }, {
       immediate: true
     });
@@ -22789,6 +22791,14 @@ __webpack_require__.r(__webpack_exports__);
   methods: {
     searchQuery: function searchQuery() {
       this.$emit('searching', this.searchInput);
+    },
+    goToSearchPage: function goToSearchPage() {
+      this.$router.push({
+        path: '/Search',
+        query: {
+          q: this.searchInput
+        }
+      });
     }
   }
 });
@@ -23179,7 +23189,9 @@ __webpack_require__.r(__webpack_exports__);
     this.$watch(function () {
       return _this2.$route.params;
     }, function (params) {
-      _this2.fetchDrugData(params.slug);
+      if (params.slug) {
+        _this2.fetchDrugData(params.slug);
+      }
     }, {
       immediate: true
     });
@@ -23243,7 +23255,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       drugs: [],
       dci: [],
       query: "",
-      type: ""
+      type: "drug"
     };
   },
   computed: {
@@ -23260,28 +23272,26 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
           while (1) {
             switch (_context.prev = _context.next) {
               case 0:
-                _this.query = query;
-
-                if (!(query.length > 1)) {
-                  _context.next = 6;
+                if (!(query.length > 0)) {
+                  _context.next = 5;
                   break;
                 }
 
-                _context.next = 4;
+                _context.next = 3;
                 return axios.get('/api/search/?q=' + query).then(function (response) {
-                  _this.drugs = response.data.drugs;
-                  _this.dci = response.data.dci;
+                  _this.drugs = _.orderBy(response.data.drugs, 'title', 'asc');
+                  _this.dci = _.orderBy(response.data.dci, 'title', 'asc');
                 });
 
-              case 4:
-                _context.next = 8;
+              case 3:
+                _context.next = 7;
                 break;
 
-              case 6:
+              case 5:
                 _this.drugs = [];
                 _this.dci = [];
 
-              case 8:
+              case 7:
               case "end":
                 return _context.stop();
             }
@@ -23299,7 +23309,9 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       _this2.query = query.q;
       _this2.type = query.type;
 
-      _this2.search(_this2.query);
+      if (_this2.query) {
+        _this2.search(_this2.query);
+      }
     }, {
       immediate: true
     });
@@ -23501,6 +23513,9 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     onInput: _cache[1] || (_cache[1] = function () {
       return $options.searchQuery && $options.searchQuery.apply($options, arguments);
     }),
+    onKeydown: _cache[2] || (_cache[2] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.withKeys)(function () {
+      return $options.goToSearchPage && $options.goToSearchPage.apply($options, arguments);
+    }, ["enter"])),
     id: "email-adress-icon",
     "class": "border border-gray-300 dark:border-gray-600 text-gray-900 text-sm dark:bg-gray-600 dark:text-slate-100 rounded-lg focus:ring-blue-500 focus:border-blue-500 block pl-12 w-full"
   }, null, 544
@@ -23572,12 +23587,31 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
 
 function render(_ctx, _cache, $props, $setup, $data, $options) {
+  var _component_router_link = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("router-link");
+
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("ul", null, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($props.data, function (drug) {
     return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("li", {
-      key: drug.id
-    }, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(drug.title), 1
-    /* TEXT */
-    );
+      key: drug.id,
+      "class": "p-2 text-base md:text-lg rounded-lg odd:bg-slate-50 dark:odd:bg-slate-700"
+    }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_router_link, {
+      to: {
+        name: 'Drug',
+        params: {
+          slug: drug.slug
+        }
+      }
+    }, {
+      "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
+        return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)((0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(drug.title), 1
+        /* TEXT */
+        )];
+      }),
+      _: 2
+      /* DYNAMIC */
+
+    }, 1032
+    /* PROPS, DYNAMIC_SLOTS */
+    , ["to"])]);
   }), 128
   /* KEYED_FRAGMENT */
   ))]);
@@ -24092,14 +24126,14 @@ var _hoisted_2 = {
   "class": "flex justify-center"
 };
 var _hoisted_3 = {
-  "class": "mt-10 w-3/4 mx-auto"
+  "class": "mt-16 px-2 md:w-3/4 mx-auto"
 };
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   var _component_SearchPageList = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("SearchPageList");
 
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
     "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)(["p-1 mx-3 border-b-2 w-40 text-center text-lg", {
-      'border-blue-600': !$options.isDci
+      'border-blue-600 text-blue-600': !$options.isDci
     }]),
     onClick: _cache[0] || (_cache[0] = function ($event) {
       return $data.type = 'drug';
@@ -24108,7 +24142,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   /* CLASS */
   ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
     "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)(["p-1 mx-3 border-b-2 w-40 text-center text-lg", {
-      'border-blue-600': $options.isDci
+      'border-blue-600 text-blue-600': $options.isDci
     }]),
     onClick: _cache[1] || (_cache[1] = function ($event) {
       return $data.type = 'dci';

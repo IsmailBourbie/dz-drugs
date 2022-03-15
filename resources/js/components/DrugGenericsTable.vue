@@ -16,9 +16,19 @@
                             <th class="p-2">Country</th>
                         </tr>
                     </thead>
-                    <tbody class="before:content-['\200C'] before:block before:leading-4">
+                    <tbody
+                        class="
+                            before:content-['\200C']
+                            before:block
+                            before:leading-4
+                        "
+                    >
                         <!-- row 1 -->
-                        <tr v-for="(drug, index) in generics" :key="index" class="odd:bg-gray-50 dark:odd:bg-gray-700">
+                        <tr
+                            v-for="(drug, index) in generics"
+                            :key="index"
+                            class="odd:bg-gray-50 dark:odd:bg-gray-700"
+                        >
                             <td class="p-2">
                                 <router-link
                                     class="hover:text-blue-400"
@@ -62,7 +72,9 @@ export default {
         this.$watch(
             () => this.$route.params,
             (param) => {
-                this.fetchGenerics(param.slug)
+                if (param.slug) {
+                    this.fetchGenerics(param.slug)
+                }
             },
             { immediate: true }
         )

@@ -21,10 +21,10 @@ class SearchController extends Controller
 
 
         // Search in drug name
-        $drugs = Drug::query()->where('name', 'LIKE', "%{$q}%")->limit($limit)->get();
+        $drugs = Drug::query()->where('name', 'LIKE', "%{$q}%")->limit($limit)->get()->sortBy('name');
 
         // Search in Dci name
-        $dci = Dci::query()->where('name', 'LIKE', "%{$q}%")->limit($limit)->get();
+        $dci = Dci::query()->where('name', 'LIKE', "%{$q}%")->limit($limit)->get()->sortBy('name');
 
 
         return response()->json([
